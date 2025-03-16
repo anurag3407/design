@@ -1,0 +1,300 @@
+/* ======== GLOBAL CHANGES ======== */
+* {
+	font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem); /* Fluid typography */
+  }
+  
+  .intro, .services, .blog {
+	display: flex;
+	flex-wrap: wrap; /* Essential for mobile */
+  }
+  
+  /* ======== SERVICE SECTION REBUILD ======== */
+  .services {
+	gap: 2rem; /* Vertical spacing */
+	padding: 1.5em; /* Relative padding */
+  }
+  
+  .firstservice, .secondservice {
+	flex-direction: column; /* Stack vertically */
+	width: min(90%, 75rem); /* Contain width */
+	margin: 0 auto; /* Center align */
+	padding: 1.5rem 0;
+  }
+  
+  .servicepic1, .serviceabout1, 
+  .servicepic2, .serviceabout2 {
+	width: 100% !important; /* Override fixed widths */
+	margin: 0 !important; /* Remove vw-based margins */
+  }
+  
+  .tiltcard1, .tiltcard2 {
+	/* Relative dimension units */
+	width: min(100%, 35rem);
+	height: auto;
+	min-height: 15rem;
+	margin: 3rem auto !important; /* Central alignment */
+	
+	/* Converted transform values */
+	transform: rotatez(0.03turn) rotatey(15deg); /* Relative rotation */
+	box-shadow: 
+	  0 0.9375rem 2.1875rem rgba(0,0,0,0.3),
+	  0 0.1875rem 0.625rem rgba(0,0,0,0.1);
+  }
+  
+  .serviceabout1 h1, .serviceabout2 h1 {
+	font-size: clamp(1.5rem, 3vw, 2.5rem); /* Fluid heading */
+	margin: 2.5rem 0 1rem !important;
+	padding: 0 1em; /* Side padding */
+  }
+  
+  .serviceabout1 p, .serviceabout2 p {
+	font-size: 1em; /* Base text size */
+	line-height: 1.6;
+	margin: 1rem auto !important;
+	padding: 0 1.5em;
+	max-width: 65ch; /* Optimal line length */
+  }
+  
+  /* ======== UNIFIED RESPONSIVE UNITS ======== */
+  .startpage h2 {
+	font-size: clamp(2rem, 5vw, 4rem); /* Fluid heading */
+	margin-top: 10vh;
+  }
+  
+  .startpage p {
+	font-size: 1em; /* Inherits base size */
+	padding: 0 1rem;
+	max-width: 65ch;
+	margin: 2rem auto;
+  }
+  
+  .navup ul {
+	font-size: 0.85em; /* Relative to root */
+	justify-content: space-evenly;
+	padding: 0 1rem;
+  }
+  
+  .sidebar {
+	width: min(15rem, 25%); /* Flexible base */
+  }
+  
+  /* ======== SPATIAL SYSTEM ======== */
+  [class*="button"] {
+	padding: 0.75em 1.5em; /* Proportional padding */
+	margin: 1.5rem auto; /* Vertical rhythm */
+	font-size: 0.9em;
+  }
+  
+  /* ======== SERVICE CARDS DEEP FIX ======== */
+  .cardheader span {
+	width: 0.7em; /* Relative to font */
+	height: 0.7em;
+	margin: 0 0.3em; /* Consistent spacing */
+  }
+  
+  .codecard {
+	gap: 1.5rem; /* Grid-like spacing */
+	padding: 1.5rem;
+  }
+  
+  .textcode p {
+	margin: 1rem 0 0 3em; /* Relative offset */
+  }
+  
+/* Media Query for widths less than 450px */
+@media screen and (max-width: 450px) {
+    * {
+        font-size: 14px; /* Adjust font sizes for better readability */
+    }
+
+    .intro {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar takes full width */
+        height: auto; /* Adjust height automatically */
+        text-align: center;
+    }
+    
+    .sidebar img {
+        width: 100px; /* Adjust logo size */
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .startpage {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height automatically */
+        padding: 15px; /* Add space around */
+    }
+
+    .startpage h2 {
+        font-size: 24px; /* Adjust headline size */
+        text-align: center;
+    }
+
+    .startpage p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .work-button1 {
+        margin: 20px auto; /* Center align button */
+    }
+
+    .introdesign {
+        width: 100%; /* Full width for "introdesign" */
+        height: auto;
+    }
+
+    .screen {
+        margin: 20px auto; /* Center align */
+        width: 90%; /* Adjust width */
+        height: auto;
+    }
+
+    /* ABOUT ME section */
+    .aboutme {
+        flex-direction: column; /* Stack profile picture and content vertically */
+    }
+
+    .profilepic {
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profilepic img {
+        width: 150px; /* Adjust profile picture size */
+        height: auto;
+    }
+
+    .maincontent {
+        width: 100%; /* Full width */
+        padding: 20px;
+    }
+
+    .maincontent h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .maincontent p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* SERVICES section */
+    .services {
+        flex-direction: column; /* Stack services vertically */
+    }
+
+    .firstservice,
+    .secondservice {
+        flex-direction: column; /* Stack image and text */
+        height: auto; /* Adjust height */
+    }
+
+    .servicepic1,
+    .servicepic2,
+    .serviceabout1,
+    .serviceabout2 {
+        width: 100%; /* Full width */
+        text-align: center; /* Center-align content */
+    }
+
+    .serviceabout1 h1,
+    .serviceabout2 h1 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .serviceabout1 p,
+    .serviceabout2 p {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .serviceabout1 button,
+    .serviceabout2 button {
+        margin: 10px auto;
+    }
+
+    /* BLOG section */
+    .blog {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .blog1, .blog2, .blog3, .blog4 {
+        width: 100%; /* Full width */
+        padding: 15px; /* Add padding */
+    }
+
+    .blog h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .blog p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* OPEN SOURCE Section */
+    .cardcontainer {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center-align cards */
+    }
+
+    .swapcard {
+        width: 90%; /* Full width for cards */
+        margin: 15px auto; /* Add spacing */
+    }
+
+    /* Conclusion Section */
+    .conclusion {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+    }
+
+    .conclusion h2 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .conclusion p {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .btn {
+        margin: 20px auto;
+    }
+
+    /* Footer Section */
+    .footer {
+        flex-direction: column; /* Stack footer elements vertically */
+        text-align: center;
+    }
+
+    .footer img {
+        width: 100px;
+        margin: 10px auto;
+    }
+
+    .company {
+        margin: 10px 0;
+    }
+
+    .navdown1 ul {
+        flex-direction: column; /* Arrange links vertically */
+        align-items: center;
+    }
+
+    .navdown1 ul li {
+        margin: 5px;
+    }
+}
